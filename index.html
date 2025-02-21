@@ -1,87 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electricity Bill Calculator - Chrome Extension</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="Icon" href="icon128.png" type="image/png">
-  
-     
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricity Bill Calculator - Browser Extension</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-HHsOCj8+QwK5GFF+9Ibxir+7+Vf2eR7aR1C/wY+Rz9tFhlrFyyH/+zH6ccw0dzZfUJ3zvEiXjQRmC+OjF7rUiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="icon128.png" type="image/png" />
+  <style>
+
+    /* Custom Animations */
+    @keyframes slide-in {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-in {
+      animation: slide-in 0.5s ease-out forwards;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+  </style>
 </head>
-
 <body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen">
-    <!-- WebStore Header -->
-    <div class="bg-blue-600 text-white py-2 animate-slide-in">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="Chrome-Web-Store-icon.png" alt="Chrome WebStore" class="w-8 h-8 animate-float">
-                <span class="font-semibold text-lg">Available on Web Store</span>
-            </div>
-            <div class="text-sm hidden md:block">Safe Extension</div>
-        </div>
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-2 animate-slide-in">
+  <div class="container mx-auto px-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="online-shopping.png" alt="Online Shopping Icon" class="w-8 h-8" style="filter: brightness(0) invert(1);" />
+      <span class="font-semibold text-lg">Available on Web Store</span>
     </div>
+    <div class="text-sm hidden md:block">Safe Extension</div>
+  </div>
+</header>
 
-    <!-- Main Content -->
-<div class="container mx-auto px-4 py-8 max-w-4xl">
+  
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
     <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row animate-slide-in">
-        <!-- Left Section -->
-        <div class="md:w-1/2 bg-blue-600 text-white p-6 md:p-10 flex flex-col justify-center">
-            <div class="flex items-center mb-4 space-x-4">
-                <img src="icon128.png" alt="Extension Icon" class="w-14 h-14 rounded-lg">
-                <h2 class="text-1xl md:text-2xl font-bold">Electricity Bill Calculator</h2>
-            </div>
-            <p class="text-base md:text-lg mb-6">Simplify electricity bill calculations for Sri Lanka with our Chrome extension.</p>
-            <div class="space-y-3">
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap mr-3 text-yellow-300">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                    <span>Instant Bill Calculation</span>
-                </div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign mr-3 text-yellow-300">
-                        <line x1="12" y1="1" x2="12" y2="23"></line>
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
-                    <span>Cost Estimation</span>
-                </div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor mr-3 text-yellow-300">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                    <span>User-Friendly Interface</span>
-                </div>
-            </div>
+      <!-- Left Section -->
+      <section class="md:w-1/2 bg-blue-600 text-white p-6 md:p-10 flex flex-col justify-center">
+        <div class="flex items-center mb-4 space-x-4">
+          <img src="icon128.png" alt="Extension Icon" class="w-14 h-14 rounded-lg" />
+          <h1 class="text-xl md:text-2xl font-bold">Electricity Bill Calculator</h1>
         </div>
-            
-            <!-- Right Section -->
-            <div class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center animate-pulse">Download Now</h2>
-                <div class="space-y-4">
-                    <a href="https://chromewebstore.google.com/detail/mmbhjdgkffdmjhcoanodlgoichkijcpa?utm_source=item-share-cp" target="_blank" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg text-center flex items-center justify-center hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1 hover:scale-105 animate-pulse">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download mr-3">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                         Download for Chrome
-                    </a>
-                    <div class="text-center text-gray-600 my-2">Version 1.5.0</div>
-                    <div class="bg-gray-100 p-4 rounded-lg text-center animate-slide-in">
-                        <p class="text-sm">This extension is compatible with Chrome on Windows and macOS operating systems. Ensure you have the latest version of Chrome for the best experience.</p>
-                    </div>
-                </div>
-            </div>
+        <p class="text-base md:text-lg mb-6">
+          Simplify electricity bill calculations for Sri Lanka with our browser extension.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-300 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+            <span>Instant Bill Calculation</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-300 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+            <span>Cost Estimation</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-300 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <line x1="8" y1="21" x2="16" y2="21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              <line x1="12" y1="17" x2="12" y2="21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+            <span>User-Friendly Interface</span>
+          </li>
+        </ul>
+      </section>
+      <!-- Right Section -->
+      <section class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center animate-pulse">Download Now</h2>
+        <div class="space-y-4">
+          <div class="flex flex-wrap gap-4 justify-center">
+            <!-- Chrome Download Button -->
+            <a href="https://chromewebstore.google.com/detail/mmbhjdgkffdmjhcoanodlgoichkijcpa?utm_source=item-share-cp" target="_blank" class="flex items-center justify-center w-full sm:w-auto bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1 hover:scale-105">
+              <img src="Chrome-Web-Store-icon.png" alt="Chrome Icon" class="w-6 h-6 mr-2" />
+              Download for Chrome
+            </a>
+            <!-- Firefox Download Button -->
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/electricity-bill-calculator" target="_blank" class="flex items-center justify-center w-full sm:w-auto bg-orange-600 text-white py-3 px-6 rounded-lg hover:bg-orange-700 transition duration-300 transform hover:-translate-y-1 hover:scale-105">
+              <img src="Firefox_logo,_2019.png" alt="Firefox Icon" class="w-6 h-6 mr-2" />
+              Download for Firefox
+            </a>
+            <!-- Brave Download Button -->
+            <a href="https://brave.com/download" target="_blank" class="flex items-center justify-center w-full sm:w-auto bg-red-600 text-white py-3 px-6 rounded-lg hover:bg-red-700 transition duration-300 transform hover:-translate-y-1 hover:scale-105">
+              <img src="514px-Brave_icon_lionface.png" alt="Brave Icon" class="w-6 h-6 mr-2" />
+              Download for Brave
+            </a>
+            <!-- Edge Download Button -->
+            <a href="https://www.microsoft.com/edge" target="_blank" class="flex items-center justify-center w-full sm:w-auto bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 transform hover:-translate-y-1 hover:scale-105">
+              <img src="Microsoft_Edge_logo_(2019).png" alt="Edge Icon" class="w-6 h-6 mr-2" />
+              Download for Edge
+            </a>
+          </div>
+          <div class="text-center text-gray-600 my-2">Version 1.5.0</div>
+          <div class="bg-gray-100 p-4 rounded-lg text-center">
+            <p class="text-sm">
+              This extension is compatible with Chrome, Edge, Firefox, and Brave on Windows and macOS. Ensure you have the latest version of your browser for the best experience.
+            </p>
+          </div>
         </div>
-        <div class="mt-4 text-center text-gray-700 text-sm animate-slide-in">
-            © 2025 Electricity Bill Calculator | Developed by minidushashimal.com
-        </div>
+      </section>
     </div>
+  </main>
 
-
-
+  <!-- Footer -->
+  <footer class="mt-4 text-center text-gray-700 text-sm animate-slide-in">
+    © 2025 Electricity Bill Calculator | Developed by
+    <a href="https://minidushashimal.com" class="text-blue-600 hover:underline" target="_blank">minidushashimal.com</a>
+  </footer>
 </body>
 </html>
